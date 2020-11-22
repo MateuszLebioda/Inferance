@@ -8,7 +8,8 @@ import {ConclusionMainComponent} from './components/conclusions/conclusion-main/
 const routes: Routes = [
   { path: 'fact', component: FactMainComponent },
   { path: 'rule', component: RuleMainComponent },
-  { path: 'conclusion', component: ConclusionMainComponent }
+  { path: 'conclusion', component: ConclusionMainComponent },
+  { path: '',   redirectTo: 'fact', pathMatch: 'full' }
 ];
 
 @NgModule({

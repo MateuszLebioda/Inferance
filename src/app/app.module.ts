@@ -8,19 +8,25 @@ import { MainComponent } from './components/main/main.component';
 import { FactMainComponent } from './components/fact/fact-main/fact-main.component';
 import { RuleMainComponent } from './components/rules/rules-main/rule-main.component';
 import { ConclusionMainComponent } from './components/conclusions/conclusion-main/conclusion-main.component';
+import { SingleFactComponent } from './components/fact/single-fact/single-fact.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ListFactComponent } from './components/fact/list-fact/list-fact.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     FactMainComponent,
     RuleMainComponent,
-    ConclusionMainComponent
+    ConclusionMainComponent,
+    SingleFactComponent,
+    ListFactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [MainComponent]
