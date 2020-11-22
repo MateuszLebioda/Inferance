@@ -1,0 +1,42 @@
+.single-fact-container{
+  padding: 15px;
+}
+
+.label-style{
+  width: calc(43.5% - 45px);
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.single-fact-card{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  .mat-card-title{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+  }
+}
+
+.select-style{
+  width: 15%;
+}
+
+.sub-header-style {
+  padding-bottom: 0;
+  div {
+    width: 50%;
+    font-family: Roboto, "Helvetica Neue", sans-serif!important;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,.54);
+    button {
+      float: right;
+      mat-icon{
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,54 @@
+<div class="single-fact-container">
+  <mat-card class="single-fact-card">
+    <div mat-subheader class="sub-header-style">
+      <div>
+        Dodaj nowy fakt
+      </div>
+      <div>
+        <button [disabled]="!factFormGroup.valid" mat-mini-fab color="primary" (click)="addFact()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <form [formGroup]="factFormGroup">
+
+
+      <mat-form-field class="label-style">
+        <mat-label>Atrybut</mat-label>
+        <label>
+          <input type="text" matInput formControlName="attribute">
+        </label>
+        <mat-error *ngIf="factFormGroup.get('attribute').hasError('required')">
+          Atrybut jest obowiązkowy
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="select-style">
+        <mat-label>Znak</mat-label>
+        <mat-select formControlName="sign">
+          <mat-option *ngFor="let sign of getSignEnumValues()" [value]="sign">
+            {{sign}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="factFormGroup.get('sign').hasError('required')">
+          Znak jest obowiązkowy
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="label-style">
+        <mat-label>Wartość</mat-label>
+        <label>
+          <input type="text" matInput formControlName="value">
+        </label>
+        <mat-error *ngIf="factFormGroup.get('value').hasError('required')">
+          Wartość jest obowiązkowa
+        </mat-error>
+        <mat-error *ngIf="factFormGroup.get('value').hasError('mustBeNumericValue')">
+          Dla podanego znaku, wartoś musi być numeryczna
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card>
+</div>
