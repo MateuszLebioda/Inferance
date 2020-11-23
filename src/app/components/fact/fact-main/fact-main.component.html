@@ -1,2 +1,4 @@
-<app-single-fact (factEmitter)="addFact($event)"></app-single-fact>
-<app-list-fact [facts]="getFacts()"></app-list-fact>
+<div style="margin: 15px">
+  <app-single-fact-builder (factEmitter)="addFact($event)" class="single-fact-builder-style"></app-single-fact-builder>
+  <app-list-fact [facts]="getFacts()"></app-list-fact>
+</div>

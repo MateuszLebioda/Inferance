@@ -8,9 +8,12 @@ import { MainComponent } from './components/main/main.component';
 import { FactMainComponent } from './components/fact/fact-main/fact-main.component';
 import { RuleMainComponent } from './components/rules/rules-main/rule-main.component';
 import { ConclusionMainComponent } from './components/conclusions/conclusion-main/conclusion-main.component';
-import { SingleFactComponent } from './components/fact/single-fact/single-fact.component';
+import { SingleFactBuilderComponent } from './components/fact/single-fact-builder/single-fact-builder.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ListFactComponent } from './components/fact/list-fact/list-fact.component';
+import { SingleRuleBuilderComponent } from './components/rules/single-rule-builder/single-rule-builder.component';
+import { SingleRuleRowComponent } from './components/rules/single-rule-row/single-rule-row.component';
+import { ListRuleComponent } from './components/rules/list-rule/list-rule.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,11 @@ import { ListFactComponent } from './components/fact/list-fact/list-fact.compone
     FactMainComponent,
     RuleMainComponent,
     ConclusionMainComponent,
-    SingleFactComponent,
-    ListFactComponent
+    SingleFactBuilderComponent,
+    ListFactComponent,
+    SingleRuleBuilderComponent,
+    SingleRuleRowComponent,
+    ListRuleComponent
   ],
   imports: [
     BrowserModule,

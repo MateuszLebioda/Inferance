@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-grid-list cols="8" rowHeight="170px">
+    <mat-grid-tile [colspan]="7">
+      <app-single-fact-builder
+        [disable]="!isNowFact() && !isNowConclusion()"
+        [save]="isNowConclusion()"
+        class="single-fact-builder"
+        (factEmitter)="addNewFact($event)">
+      </app-single-fact-builder>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+        <mat-chip-list class="mat-chip-list-stacked" style="width: 90%" >
+          <mat-chip *ngFor="let equalSign of getEqualSignEnumValues()" color="primary" selected [disabled]="!isNowSing()" (click)="addNewSign(equalSign)">
+            {{equalSign}}
+          </mat-chip>
+          <mat-chip color="accent" selected [disabled]="!isNowSing()" (click)="addConclusion()">
+            THEN
+          </mat-chip>
+        </mat-chip-list>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <app-single-rule-row [rule]="rule" [isStateConclusion]="isNowConclusion()"></app-single-rule-row>
+</mat-card>
+
+
