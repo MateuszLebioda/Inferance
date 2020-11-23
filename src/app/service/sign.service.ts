@@ -24,9 +24,6 @@ export class SignService {
   }
 
   static isNumericValue(value: string): boolean {
-    if (Sign.EQUALS.valueOf() === value) {
-      return false;
-    }
-    return true;
+    return Sign.EQUALS.valueOf() !== value;
   }
 }

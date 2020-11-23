@@ -1,0 +1,36 @@
+<div>
+  <mat-card>
+    <mat-list>
+      <div mat-subheader class="sub-header-style">
+        <div>Lista reguł</div>
+        <div>
+          <button *ngIf="rules.length > 0" mat-flat-button color="warn" class="delete-button" (click)="deleteAllRules()">
+            Usuń wszystkie fakty
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <ng-container *ngIf="rules.length > 0; else emptyList">
+        <mat-list-item *ngFor="let rule of rules; let index = index">
+          <div>
+            <button mat-icon-button color="warn" class="delete-button" (click)="deleteRule(index)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div>
+            <app-single-rule-row [rule]="rule"></app-single-rule-row>
+          </div>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</div>
+
+
+<ng-template #emptyList>
+  <mat-card class="empty-card">
+    <strong>
+      Lista reguł jest pusta
+    </strong>
+  </mat-card>
+</ng-template>

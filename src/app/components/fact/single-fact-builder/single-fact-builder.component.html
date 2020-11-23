@@ -5,20 +5,17 @@
         Dodaj nowy fakt
       </div>
       <div>
-        <button [disabled]="!factFormGroup.valid" mat-mini-fab color="primary" (click)="addFact()">
-          <mat-icon>add</mat-icon>
+        <button [disabled]="disable || !factFormGroup.valid" mat-mini-fab color="primary" (click)="addFact()" #addButton>
+          <mat-icon *ngIf="!save">add</mat-icon>
+          <mat-icon *ngIf="save">done</mat-icon>
         </button>
       </div>
     </div>
 
     <form [formGroup]="factFormGroup">
-
-
       <mat-form-field class="label-style">
         <mat-label>Atrybut</mat-label>
-        <label>
           <input type="text" matInput formControlName="attribute">
-        </label>
         <mat-error *ngIf="factFormGroup.get('attribute').hasError('required')">
           Atrybut jest obowiązkowy
         </mat-error>
@@ -26,7 +23,7 @@
 
       <mat-form-field class="select-style">
         <mat-label>Znak</mat-label>
-        <mat-select formControlName="sign">
+        <mat-select formControlName="sign" [disabled]="disable">
           <mat-option *ngFor="let sign of getSignEnumValues()" [value]="sign">
             {{sign}}
           </mat-option>

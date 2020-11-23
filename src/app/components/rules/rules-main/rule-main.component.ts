@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DataContainer} from '../../../data/data-container';
+import {Rule} from '../../../model/rule';
 
 @Component({
   selector: 'app-rules-main',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RuleMainComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  rules: Array<Rule>;
+
+  ngOnInit(): void {
+    this.rules = DataContainer.ruleList;
+  }
+
+  addNewRule(rule: Rule): any {
+    this.rules.push(rule);
+  }
 }
