@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Rule} from '../model/rule';
+import {FactService} from './fact.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,15 +20,16 @@ export class RuleService {
     let index = 0;
     while (index < rule.facts.length) {
       if (index !== rule.equalSigns.length) {
-        returnString = returnString.concat(rule.facts[index].toString() + ' ' + ' ' + rule.equalSigns[index].valueOf() + ' ');
+        returnString
+          = returnString.concat(FactService.factToString(rule.facts[index]) + ' ' + ' ' + rule.equalSigns[index].valueOf() + ' ');
       } else {
-        returnString = returnString.concat(rule.facts[index].toString() + ' ');
+        returnString = returnString.concat(FactService.factToString(rule.facts[index]) + ' ');
       }
       index++;
     }
 
     if (rule.conclusion) {
-      returnString = returnString.concat('THEN ' + rule.conclusion.toString());
+      returnString = returnString.concat('THEN ' + FactService.factToString(rule.conclusion));
     }
 
     return returnString;

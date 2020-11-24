@@ -3,6 +3,7 @@ import {EqualSign} from '../../../model/equal-sign.enum';
 import {Rule} from '../../../model/rule';
 import {Fact} from '../../../model/fact';
 import {EqualSignService} from '../../../service/equal-sign.service';
+import {RuleService} from '../../../service/rule.service';
 
 @Component({
   selector: 'app-single-rule-builder',
@@ -73,7 +74,13 @@ export class SingleRuleBuilderComponent implements OnInit {
     }
   }
 
+  isEmptyRule(): boolean {
+    return RuleService.ruleToString(this.rule) === '';
+  }
 
+  cleanRule(): any {
+    this.restart();
+  }
 }
 
 export enum StateRuleBuilder {

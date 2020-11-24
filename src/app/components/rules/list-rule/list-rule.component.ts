@@ -10,18 +10,23 @@ export class ListRuleComponent implements OnInit {
 
   @Input() rules: Array<Rule>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   deleteAllRules(): any {
-    while (this.rules.length > 0){
+    while (this.rules.length > 0) {
       this.deleteRule(0);
     }
   }
 
   deleteRule(index: number): any {
     this.rules.splice(index, 1);
+  }
+
+  getRules(): Array<Rule> {
+    return this.rules;
   }
 }

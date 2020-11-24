@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
+# Install modules
+
+Dont forget install modules. Use command: `npm install`
+
 # Build / Launch
 To build / lunch as use command: `npm run electron-build`
 

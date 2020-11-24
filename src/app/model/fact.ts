@@ -6,8 +6,9 @@ export class Fact {
   public sign: Sign;
   public value: string;
 
-  public toString(): string {
-    return this.attribute + ' ' + this.sign.valueOf() + ' ' + ' ' + this.value;
+  constructor(attribute?: string, sign?: Sign, value?: string) {
+    this.attribute = attribute;
+    this.sign = sign;
+    this.value = value;
   }
-
 }

@@ -27,5 +27,4 @@ export class SingleRuleRowComponent implements OnInit {
       return ruleString;
     }
   }
-
 }

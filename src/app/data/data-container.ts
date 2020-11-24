@@ -1,9 +1,8 @@
-import {Fact} from '../model/fact';
-import {Rule} from '../model/rule';
+import {TemplateData} from './template-data';
 
 export class DataContainer {
 
-  static factList = new Array<Fact>();
-  static ruleList = new Array<Rule>();
+  static factList = TemplateData.getTemplateFacts();
+  static ruleList = TemplateData.getTemplateRules();
 
 }

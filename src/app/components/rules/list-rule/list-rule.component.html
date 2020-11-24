@@ -1,4 +1,4 @@
-<div>
+<div class="container-div">
   <mat-card>
     <mat-list>
       <div mat-subheader class="sub-header-style">
@@ -11,7 +11,7 @@
         </div>
       </div>
       <ng-container *ngIf="rules.length > 0; else emptyList">
-        <mat-list-item *ngFor="let rule of rules; let index = index">
+        <mat-list-item *ngFor="let rule of getRules(); let index = index">
           <div>
             <button mat-icon-button color="warn" class="delete-button" (click)="deleteRule(index)">
               <mat-icon>delete</mat-icon>

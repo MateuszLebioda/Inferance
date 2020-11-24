@@ -1,4 +1,15 @@
-<mat-card>
+<div class="container-div">
+  <mat-card>
+    <ng-container *ngIf="!isEmptyRule(); else emptyList">
+      <div class="rule-row-container">
+        <button mat-icon-button color="warn" class="delete-button" (click)="cleanRule()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <app-single-rule-row class="single-rule-row-class" [rule]="rule"
+                             [isStateConclusion]="isNowConclusion()"></app-single-rule-row>
+      </div>
+    </ng-container>
+  </mat-card>
   <mat-grid-list cols="8" rowHeight="170px">
     <mat-grid-tile [colspan]="7">
       <app-single-fact-builder
@@ -9,17 +20,22 @@
       </app-single-fact-builder>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1">
-        <mat-chip-list class="mat-chip-list-stacked" style="width: 90%" >
-          <mat-chip *ngFor="let equalSign of getEqualSignEnumValues()" color="primary" selected [disabled]="!isNowSing()" (click)="addNewSign(equalSign)">
-            {{equalSign}}
-          </mat-chip>
-          <mat-chip color="accent" selected [disabled]="!isNowSing()" (click)="addConclusion()">
-            THEN
-          </mat-chip>
-        </mat-chip-list>
+      <mat-chip-list class="mat-chip-list-stacked" style="width: 90%">
+        <mat-chip *ngFor="let equalSign of getEqualSignEnumValues()" color="primary" selected [disabled]="!isNowSing()"
+                  (click)="addNewSign(equalSign)">
+          {{equalSign}}
+        </mat-chip>
+        <mat-chip color="accent" selected [disabled]="!isNowSing()" (click)="addConclusion()">
+          THEN
+        </mat-chip>
+      </mat-chip-list>
     </mat-grid-tile>
   </mat-grid-list>
-  <app-single-rule-row [rule]="rule" [isStateConclusion]="isNowConclusion()"></app-single-rule-row>
-</mat-card>
-
-
+</div>
+<ng-template #emptyList>
+  <div style="text-align: center">
+    Dodaj fakt, aby rozpocząć tworzenie reguły. Po dodaniu faktu, należy wybrać operator.<br/>
+    Czynność należy powtarzać, aż do momentu dodania operatora THEN. <br/>
+    Po wybraniu operatora THEN, należy wprowadzić konkluzję i tym samym zakończyć dodawanie reguły
+  </div>
+</ng-template>
