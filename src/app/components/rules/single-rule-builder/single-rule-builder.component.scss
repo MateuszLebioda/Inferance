@@ -1,3 +1,22 @@
 .single-fact-builder{
   width: 100%;
 }
+
+.delete-button{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-bottom: 5px;
+}
+
+.single-rule-row-class{
+  width: calc(100% - 50px);
+}
+
+.rule-row-container{
+  width: 100%;
+}
+
+.container-div{
+  margin: 15px;
+}

@@ -21,4 +21,8 @@ export class RuleMainComponent implements OnInit {
   addNewRule(rule: Rule): any {
     this.rules.push(rule);
   }
+
+  getRules(): Array<Rule>{
+    return this.rules;
+  }
 }

@@ -20,7 +20,6 @@ export class ListFactComponent implements OnInit {
     this.facts.splice(index, 1);
   }
 
-
   deleteAllFacts(): any {
     while (this.facts.length > 0){
       this.deleteFact(0);

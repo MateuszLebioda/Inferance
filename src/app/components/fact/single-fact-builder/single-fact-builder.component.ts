@@ -14,8 +14,10 @@ import {MatButton} from '@angular/material/button';
 export class SingleFactBuilderComponent implements OnInit, OnChanges {
 
   @Output() factEmitter = new EventEmitter<Fact>();
+
   @Input() disable = false;
   @Input() save = false;
+  @Input() isThisFact = true;
 
   @ViewChild('addButton') addButton: MatButton;
 

@@ -11,6 +11,7 @@ export class SingleRuleRowComponent implements OnInit {
 
   @Input() rule: Rule;
   @Input() isStateConclusion;
+  @Input() isDisabled = false;
 
   constructor() {
   }
@@ -27,5 +28,4 @@ export class SingleRuleRowComponent implements OnInit {
       return ruleString;
     }
   }
-
 }

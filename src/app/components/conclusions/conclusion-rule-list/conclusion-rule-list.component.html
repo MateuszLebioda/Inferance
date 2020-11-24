@@ -1,0 +1,29 @@
+<div class="container-div">
+  <mat-card>
+    <mat-list>
+      <div mat-subheader class="sub-header-style">
+        <div>Lista reguł</div>
+      </div>
+      <ng-container *ngIf="rules.length > 0; else emptyList">
+        <mat-list-item *ngFor="let rule of rules; let index = index">
+          <div class="rule-index" [ngStyle]="{'color' : isDisabled(index) ? 'grey' : 'black'}">
+            <strong>R{{index + 1}}:</strong>
+          </div>
+          <app-single-rule-row style="width: 100%" [rule]="rule" [isDisabled]="isDisabled(index)"></app-single-rule-row>
+          <div style="justify-content: flex-end">
+            <img *ngIf="isNowProcessing(index)" src="assets/arrow.gif" class="arrow-style" alt="<-">
+          </div>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</div>
+
+
+<ng-template #emptyList>
+  <mat-card class="empty-card">
+    <strong>
+      Lista reguł jest pusta
+    </strong>
+  </mat-card>
+</ng-template>
