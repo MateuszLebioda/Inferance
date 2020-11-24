@@ -16,6 +16,7 @@ import { SingleRuleRowComponent } from './components/rules/single-rule-row/singl
 import { ListRuleComponent } from './components/rules/list-rule/list-rule.component';
 import { ConclusionFactListComponent } from './components/conclusions/conclusion-fact-list/conclusion-fact-list.component';
 import { ConclusionRuleListComponent } from './components/conclusions/conclusion-rule-list/conclusion-rule-list.component';
+import {BlockUIModule} from 'ng-block-ui';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ConclusionRuleListComponent } from './components/conclusions/conclusion
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BlockUIModule.forRoot()
   ],
   providers: [],
   bootstrap: [MainComponent]

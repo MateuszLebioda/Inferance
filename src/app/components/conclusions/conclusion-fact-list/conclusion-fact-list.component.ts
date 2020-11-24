@@ -12,16 +12,28 @@ export class ConclusionFactListComponent implements OnInit {
 
   @Input() facts: Array<Fact>;
   @Input() newFacts: Array<Fact>;
-  @Input() blocked = false;
+  @Input() blocked: boolean;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.deleteAllNewFacts();
   }
 
   startConclude(): any {
+    this.deleteAllNewFacts();
     this.conclude.emit();
+  }
+
+  deleteNewFact(index: number): any {
+    this.newFacts.splice(index, 1);
+  }
+
+  deleteAllNewFacts(): any {
+    while (this.newFacts.length > 0){
+      this.deleteNewFact(0);
+    }
   }
 
 }

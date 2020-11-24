@@ -3,6 +3,7 @@ import {DataContainer} from '../../../data/data-container';
 import {Fact} from '../../../model/fact';
 import {RuleService} from '../../../service/rule.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {BlockUI, NgBlockUI} from 'ng-block-ui';
 
 @Component({
   selector: 'app-conclusion-main',
@@ -14,18 +15,21 @@ export class ConclusionMainComponent implements OnInit {
   constructor(private snackBar: MatSnackBar) {
   }
 
+  @BlockUI() block: NgBlockUI;
+
   facts = DataContainer.factList;
   newFacts = DataContainer.newFactList;
   rules = DataContainer.ruleList;
-
   activatedRules = new Array<number>();
-
   actualProcessing = -1;
+  isBlockedProcess = false;
 
   ngOnInit(): void {
   }
 
   async startConclude(): Promise<any> {
+    this.block.start('Wnioskuję');
+    this.isBlockedProcess = true;
     this.activatedRules = new Array<number>();
     while (this.actualProcessing < this.rules.length - 1) {
       if (this.actualProcessing === -1) {
@@ -44,7 +48,9 @@ export class ConclusionMainComponent implements OnInit {
       }
     }
     this.endInference();
+    this.isBlockedProcess = false;
     this.actualProcessing = -1;
+    this.block.stop();
   }
 
   getAllFactsBase(): Array<Fact> {

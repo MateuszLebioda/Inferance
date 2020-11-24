@@ -1,2 +1,2 @@
-<app-conclusion-fact-list [facts]="facts" [newFacts]="newFacts" (conclude)="startConclude()"></app-conclusion-fact-list>
+<app-conclusion-fact-list [facts]="facts" [newFacts]="newFacts" [blocked]="isBlockedProcess" (conclude)="startConclude()"></app-conclusion-fact-list>
 <app-conclusion-rule-list [rules]="rules" [actualIndex]="actualProcessing" [disabledRules]="activatedRules"></app-conclusion-rule-list>

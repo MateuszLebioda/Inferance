@@ -11,26 +11,37 @@
       </ng-container>
       <mat-divider></mat-divider>
       <div mat-subheader>Nowe fakty</div>
-      <ng-container *ngIf="newFacts.length > 0; else emptyNewFact">
+      <ng-container *ngIf="newFacts.length > 0">
         <mat-list-item *ngFor="let fact of newFacts" class="label-style">
           <div>{{fact.attribute}}</div>
           <div>{{fact.sign}}</div>
           <div> {{fact.value}} </div>
         </mat-list-item>
       </ng-container>
+      <mat-card class="empty-card" (click)="startConclude()" [ngClass]="{'mat-card-button': !blocked, 'mat-card-button-disabled': blocked}">
+        <ng-container *ngIf="!blocked && newFacts.length === 0">
+          <strong>
+            Lista nowych faktów jest pusta <br/>
+          </strong>
+          Aby wysnioskować nowe fakty rozpocznij proces wnioskowania
+        </ng-container>
+        <ng-container *ngIf="!blocked && newFacts.length > 0">
+          <strong>
+            Wnioskowanie zakończone <br/>
+          </strong>
+          Uruchom je raz jeszcze
+        </ng-container>
+        <ng-container *ngIf="blocked">
+          <strong>
+            Trwa wnioskowanie <br/>
+          </strong>
+          Po zakończeniu wnioskowania będziesz mógł uruchomić je raz jeszcze
+        </ng-container>
+      </mat-card>
     </mat-list>
   </mat-card>
 </div>
 
-
-<ng-template #emptyNewFact>
-  <mat-card class="empty-card mat-card-button" style="cursor: pointer" (click)="startConclude()">
-      <strong>
-        Lista nowych faktów jest pusta <br/>
-      </strong>
-      Aby wysnioskować nowe fakty rozpocznij proces wnioskowania
-  </mat-card>
-</ng-template>
 
 <ng-template #emptyList>
   <mat-card class="empty-card" style="padding: 0">
