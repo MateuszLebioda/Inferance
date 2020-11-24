@@ -1,0 +1,42 @@
+<div class="container-div">
+  <mat-card>
+    <mat-list>
+      <div mat-subheader>Fakty</div>
+      <ng-container *ngIf="facts.length > 0; else emptyList">
+        <mat-list-item *ngFor="let fact of facts" class="label-style">
+          <div>{{fact.attribute}}</div>
+          <div>{{fact.sign}}</div>
+          <div> {{fact.value}} </div>
+        </mat-list-item>
+      </ng-container>
+      <mat-divider></mat-divider>
+      <div mat-subheader>Nowe fakty</div>
+      <ng-container *ngIf="newFacts.length > 0; else emptyNewFact">
+        <mat-list-item *ngFor="let fact of newFacts" class="label-style">
+          <div>{{fact.attribute}}</div>
+          <div>{{fact.sign}}</div>
+          <div> {{fact.value}} </div>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</div>
+
+
+<ng-template #emptyNewFact>
+  <mat-card class="empty-card mat-card-button" style="cursor: pointer" (click)="startConclude()">
+      <strong>
+        Lista nowych faktów jest pusta <br/>
+      </strong>
+      Aby wysnioskować nowe fakty rozpocznij proces wnioskowania
+  </mat-card>
+</ng-template>
+
+<ng-template #emptyList>
+  <mat-card class="empty-card" style="padding: 0">
+    <strong>
+      Lista faktów jest pusta<br/>
+    </strong>
+    Aby dodać nowe fakty przejdz do widoku <strong>Fakty</strong>
+  </mat-card>
+</ng-template>

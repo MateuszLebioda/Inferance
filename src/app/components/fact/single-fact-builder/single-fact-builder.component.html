@@ -23,7 +23,7 @@
 
       <mat-form-field class="select-style">
         <mat-label>Znak</mat-label>
-        <mat-select formControlName="sign" [disabled]="disable">
+        <mat-select formControlName="sign" [disabled]="disable || isThisFact">
           <mat-option *ngFor="let sign of getSignEnumValues()" [value]="sign">
             {{sign}}
           </mat-option>

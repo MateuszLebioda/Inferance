@@ -14,6 +14,8 @@ import { ListFactComponent } from './components/fact/list-fact/list-fact.compone
 import { SingleRuleBuilderComponent } from './components/rules/single-rule-builder/single-rule-builder.component';
 import { SingleRuleRowComponent } from './components/rules/single-rule-row/single-rule-row.component';
 import { ListRuleComponent } from './components/rules/list-rule/list-rule.component';
+import { ConclusionFactListComponent } from './components/conclusions/conclusion-fact-list/conclusion-fact-list.component';
+import { ConclusionRuleListComponent } from './components/conclusions/conclusion-rule-list/conclusion-rule-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ListRuleComponent } from './components/rules/list-rule/list-rule.compon
     ListFactComponent,
     SingleRuleBuilderComponent,
     SingleRuleRowComponent,
-    ListRuleComponent
+    ListRuleComponent,
+    ConclusionFactListComponent,
+    ConclusionRuleListComponent
   ],
   imports: [
     BrowserModule,

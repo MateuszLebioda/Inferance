@@ -46,6 +46,13 @@ export class TemplateData {
           EqualSign.AND]),
         new Fact('co robić', Sign.EQUALS, 'iść na piwo')
       ),
+
+      new Rule(
+        Array.from([
+          new Fact('zmęczenie', Sign.EQUALS, 'tak')]),
+        Array.from([]),
+        new Fact('iść spać', Sign.EQUALS, 'tak')
+      )
     ]);
   }
 

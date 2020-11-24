@@ -11,6 +11,7 @@ export class SingleRuleRowComponent implements OnInit {
 
   @Input() rule: Rule;
   @Input() isStateConclusion;
+  @Input() isDisabled = false;
 
   constructor() {
   }

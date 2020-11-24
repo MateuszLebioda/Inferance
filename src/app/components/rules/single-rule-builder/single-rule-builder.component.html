@@ -15,6 +15,7 @@
       <app-single-fact-builder
         [disable]="!isNowFact() && !isNowConclusion()"
         [save]="isNowConclusion()"
+        [isThisFact]="isNowConclusion()"
         class="single-fact-builder"
         (factEmitter)="addNewFact($event)">
       </app-single-fact-builder>
