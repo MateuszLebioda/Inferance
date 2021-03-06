@@ -1,8 +1,8 @@
 <div>
-  <mat-card>
+  <mat-card class="fact-border">
     <mat-list>
       <div mat-subheader class="sub-header-style">
-        <div>Lista faktów</div>
+        <div class="fact-title">Lista faktów</div>
         <div>
           <button *ngIf="facts.length > 0" mat-flat-button color="warn" class="delete-button" (click)="deleteAllFacts()">
             Usuń wszystkie fakty
@@ -11,7 +11,7 @@
         </div>
       </div>
       <ng-container *ngIf="facts.length > 0; else emptyList">
-        <mat-list-item *ngFor="let fact of facts; let index = index">
+        <mat-list-item *ngFor="let fact of facts; let index = index" class="fact-rows">
           <div>
             <button mat-icon-button color="warn" class="delete-button" (click)="deleteFact(index)">
               <mat-icon>delete</mat-icon>
