@@ -5,12 +5,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 /* LEFT align */
-.mat-list .mat-list-item.left .mat-list-item-content{
+.mat-list .mat-list-item.left .mat-list-item-content {
   justify-content: flex-start;
 }
 
 /* RIGHT align */
-.mat-list .mat-list-item.right .mat-list-item-content{
+.mat-list .mat-list-item.right .mat-list-item-content {
   justify-content: flex-end;
 }
 
@@ -21,4 +21,45 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-left: 25%;
   background-color: #3f51b5;
   color: white;
+}
+
+.fact-border{
+  border: 1px solid #46b533;
+}
+
+.fact-title{
+  color: #46b533 !important;
+  font-weight: bold!important;
+}
+
+.fact-rows{
+  color: #245f17 !important;
+}
+
+.conclusion-border{
+  border: 1px solid #3f51b5;
+}
+
+
+.conclusion-title{
+  color: #3f51b5!important;
+  font-weight: bold!important;
+}
+
+.conclusion-row{
+  color: #3f51b5!important;
+}
+
+.rule-border{
+  border: 1px solid #b58034;
+}
+
+
+.rule-title{
+  color: #b58034!important;
+  font-weight: bold!important;
+}
+
+.rule-row{
+  color: #b58034!important;
 }

@@ -1,13 +1,19 @@
-<block-ui>
-  <mat-toolbar color="primary" class="tool-bar">
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">book</mat-icon>
-    <span>Inference</span>
-  </mat-toolbar>
-  <mat-toolbar color="primary" class="tool-bar-nav">
-    <button mat-button class="nav-button" routerLink="/fact">Fakty</button>
-    <button mat-button class="tool-bar-spans" routerLink="/rule">Reguły</button>
-    <button mat-button class="tool-bar-spans" routerLink="/conclusion">Wnioskuj</button>
-  </mat-toolbar>
+<div class="container">
+  <block-ui>
+    <div class="header">
+      <mat-toolbar color="primary" class="tool-bar">
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">book</mat-icon>
+        <span>Inference</span>
+      </mat-toolbar>
+      <mat-toolbar color="primary" class="tool-bar-nav">
+        <button mat-button class="nav-button" routerLink="/fact">Fakty</button>
+        <button mat-button class="tool-bar-spans" routerLink="/rule">Reguły</button>
+        <button mat-button class="tool-bar-spans" routerLink="/conclusion">Wnioskuj</button>
+      </mat-toolbar>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </block-ui>
+</div>
 
-  <router-outlet></router-outlet>
-</block-ui>

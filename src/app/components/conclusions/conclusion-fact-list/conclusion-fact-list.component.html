@@ -1,7 +1,7 @@
 <div class="container-div">
-  <mat-card>
+  <mat-card class="fact-border ">
     <mat-list>
-      <div mat-subheader>Fakty</div>
+      <div mat-subheader class="fact-title">Fakty</div>
       <ng-container *ngIf="facts.length > 0; else emptyList">
         <mat-list-item *ngFor="let fact of facts" class="label-style">
           <div>{{fact.attribute}}</div>
@@ -9,10 +9,13 @@
           <div> {{fact.value}} </div>
         </mat-list-item>
       </ng-container>
-      <mat-divider></mat-divider>
-      <div mat-subheader>Nowe fakty</div>
+    </mat-list>
+  </mat-card>
+  <mat-card style="margin-top: 15px" class="conclusion-border">
+    <mat-list>
+      <div mat-subheader class="conclusion-title">Nowe fakty</div>
       <ng-container *ngIf="newFacts.length > 0">
-        <mat-list-item *ngFor="let fact of newFacts" class="label-style">
+        <mat-list-item *ngFor="let fact of newFacts" class="rule-rows label-style">
           <div>{{fact.attribute}}</div>
           <div>{{fact.sign}}</div>
           <div> {{fact.value}} </div>
